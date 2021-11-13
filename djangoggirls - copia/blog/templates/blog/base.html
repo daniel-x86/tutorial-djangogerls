@@ -1,0 +1,23 @@
+{% load static %} <!-- carga archivos estáticos donde se encuentra por ej el blog.css -->
+<html>
+    <head>
+        <title> Django Girls blog By daniel-x86 </title>
+		<link rel="stylesheet" href="{% static 'css/blog.css' %}"> <!-- carga blog.css de static -->
+    </head>
+    <body>
+	<div class="main">	
+
+	<h1> Django Girls blog By daniel-x86 </h1>
+	
+		<ul class="cards">
+		
+		    <!-- carga bloque de contenido django -->
+			{% block content %}
+            {% endblock %}
+			
+		</ul>		
+	</div>		
+		
+		
+    </body>
+</html>

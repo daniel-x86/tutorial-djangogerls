@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+  
+	<div class='tablep2'>
+	<br>
+    <p align='center' class='p_titulo_noticia'>{{ post.title }}</p>
+    <br>
+	<center>
+	<p class='txtarea_notcont' name='publi_contenidoS' disabled>
+	{{ post.text|linebreaksbr }}
+	</p>
+	</center>
+		{% if post.published_date %}
+			<p class='pienoti'>Publicado: {{ post.published_date }}</p>                
+        {% endif %}
+    </div>
+	
+
+{% endblock %}

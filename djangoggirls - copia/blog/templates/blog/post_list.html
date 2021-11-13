@@ -1,20 +1,20 @@
-<html>
-    <head>
-        <title>Django Girls blog</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Django Girls Blog</a></h1>
-        </div>
-		
-        {% for post in posts %}
-		<hr>
-		<div>
-			<h2><a href="">{{ post.title }}</a></h2>
-			<p>{{ post.text|linebreaksbr }}</p>
-			<p> publicado: {{ post.published_date }}</p>
-		</div>
-		{% endfor %}
+<!-- indica que es una extensión de base.html, conecta block content con base.html -->
+{% extends 'blog/base.html' %}
 
-    </body>
-</html>
+<!-- bloque de contenido django -->
+{% block content %}
+			<!-- bucle for para mostrar los elementos de post -->
+			{% for post in posts %}
+			<li class="cards_item">
+				<div class="card">
+					<div class="card_image"><img src="https://picsum.photos/500/300/?image=5"></div>
+						<div class="card_content">
+							<h2 class="card_title">{{ post.title }}</h2>
+							<p class="card_text">{{ post.text|linebreaksbr }}</p>
+							<p class="card_text">publicado: {{ post.published_date }}</p>
+							<a href="{% url 'post_detail' pk=post.pk %}" class='btn card_btn'>Read More</a>
+						</div>
+				</div>
+			</li>
+			{% endfor %}
+{% endblock %}
