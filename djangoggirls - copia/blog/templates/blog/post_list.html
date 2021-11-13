@@ -4,6 +4,7 @@
 <!-- bloque de contenido django -->
 {% block content %}
 			<!-- bucle for para mostrar los elementos de post -->
+			<ul class="cards">
 			{% for post in posts %}
 			<li class="cards_item">
 				<div class="card">
@@ -12,9 +13,14 @@
 							<h2 class="card_title">{{ post.title }}</h2>
 							<p class="card_text">{{ post.text|linebreaksbr }}</p>
 							<p class="card_text">publicado: {{ post.published_date }}</p>
-							<a href="{% url 'post_detail' pk=post.pk %}" class='btn card_btn'>Read More</a>
+							<a href="{% url 'post_detail' pk=post.pk %}" class='btn card_btn'>Ver más</a>
+							<br>
+							{% if user.is_authenticated %}
+							<a href="{% url 'post_edit' pk=post.pk %}" class='btn card_btn'>Editar</a>
+							{% endif %}
 						</div>
 				</div>
 			</li>
 			{% endfor %}
+			</ul>
 {% endblock %}

@@ -84,6 +84,29 @@ img {
   text-shadow: 1px 1px 20px white;
 }
 
+.btnsave {
+  color: white;
+  padding: 0.5rem;
+  font-size: 14px;
+  border-radius: 45px;
+  font-weight: 600;
+  display: block;
+  min-width: 28%;
+  width: fit-content;
+  cursor: pointer;
+  border: solid 1px green;
+  background-color: green;
+  text-decoration: none;
+}
+
+.btnsave:hover {
+  border: solid black 1px;
+  color: white;
+  background-color: darkgreen;
+  transition: all .3s;
+  text-shadow: 1px 1px 20px white;
+}
+
 .cards {
   display: flex;
   flex-wrap: wrap;

@@ -9,15 +9,20 @@
 
 	<h1> Django Girls blog By daniel-x86 </h1>
 	
-		<ul class="cards">
-		
+	{% if user.is_authenticated %}
+	<br>
+	<a href="{% url 'post_new' %}" class='btn card_btn'>Agregar publicación</a>	
+	{% endif %}
+	
+	<br>
+	<a href="{% url 'post_list' %}" class='btn card_btn'>Mostrar todas las publicaciones</a>
+	<br>	
+	
 		    <!-- carga bloque de contenido django -->
 			{% block content %}
             {% endblock %}
 			
-		</ul>		
 	</div>		
-		
 		
     </body>
 </html>
